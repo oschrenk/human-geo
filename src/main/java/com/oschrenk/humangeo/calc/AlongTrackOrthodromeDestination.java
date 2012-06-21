@@ -1,6 +1,6 @@
 package com.oschrenk.humangeo.calc;
 
-import com.oschrenk.humangeo.api.AlongTrackDestination;
+import com.oschrenk.humangeo.api.PointLineDestination;
 import com.oschrenk.humangeo.core.Geographic2dCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 
@@ -9,7 +9,7 @@ import com.oschrenk.humangeo.geom.Sphere;
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class AlongTrackOrthodromeDestination implements
-		AlongTrackDestination<Geographic2dCoordinate> {
+		PointLineDestination<Geographic2dCoordinate> {
 
 	private final Sphere sphere;
 

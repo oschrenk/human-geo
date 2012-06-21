@@ -17,7 +17,6 @@ public class AlongTrackOrthodromeDestinationTest {
 		final Geographic2dCoordinate from = new Geographic2dCoordinate(0, 0);
 		final Geographic2dCoordinate to = new Geographic2dCoordinate(90, 0);
 		final Geographic2dCoordinate point = new Geographic2dCoordinate(10, 45);
-
 		final Geographic2dCoordinate destination = new AlongTrackOrthodromeDestination(
 				Spheres.EARTH).destination(point, from, to);
 
