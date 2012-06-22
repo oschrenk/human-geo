@@ -5,6 +5,25 @@ import com.oschrenk.humangeo.geom.Sphere;
 import com.oschrenk.humangeo.geom.Spheroid;
 
 /**
+ * A geographic coordinate system is a coordinate system that enables every
+ * location on the Earth to be specified by a set of numbers.
+ * 
+ * <p>
+ * The <b>latitude<b> (abbreviation: Lat., φ, or phi) of a point on the Earth's
+ * surface is the angle in the range −90° ≤ φ ≤ 90° between the equatorial plane
+ * and a line that passes through that point and is normal to the surface of a
+ * reference ellipsoid.
+ * 
+ * <p>
+ * The <b>longitude</b> (abbreviation: Long., λ, or lambda) of a point on the
+ * Earth's surface is the angle is −180° ≤ λ ≤ 180° east or west from a
+ * reference meridian to another meridian that passes through that point.
+ * 
+ * <p>
+ * Instead of the radial distance, geographers commonly use altitude above some
+ * reference surface, which may be the sea level or "mean" surface level for
+ * planets without liquid oceans. The radial distance r can be computed from the
+ * altitude by adding the mean radius of the planet's reference surface
  * 
  * @author Oliver Schrenk <oliver.schrenk@q2web.de>
  */
@@ -18,6 +37,8 @@ public class GeographicCoordinateSystem {
 	 * 
 	 * @param spheroid
 	 *            the spheroid
+	 * @param helperSphere
+	 *            For approximate calculations
 	 */
 	public GeographicCoordinateSystem(final Spheroid spheroid,
 			final Sphere helperSphere) {

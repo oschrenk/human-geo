@@ -5,6 +5,26 @@ import com.oschrenk.humangeo.core.SphericalCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 
 /**
+ * A spherical coordinate system is a coordinate system for three-dimensional
+ * space where the position of a point is specified by three numbers: the radial
+ * distance of that point from a fixed origin, its polar angle measured from a
+ * fixed zenith direction, and the azimuth angle of its orthogonal projection on
+ * a reference plane that passes through the origin and is orthogonal to the
+ * zenith, measured from a fixed reference direction on that plane.
+ * 
+ * <p>
+ * The radial distance is also called the radius or radial coordinate. The polar
+ * angle may be called colatitude, zenith angle, normal angle, or inclination
+ * angle. The use of symbols and the order of the coordinates differs between
+ * sources. Here it is defined as:
+ * 
+ * <ul>
+ * <li><b>r</b> the radial distance</li>
+ * <li><b>θ</b> (theta), the polar angle</li>
+ * <li><b>φ</b> (phi), the azimuth angle</li>
+ * </ul>
+ * <p>
+ * 
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
