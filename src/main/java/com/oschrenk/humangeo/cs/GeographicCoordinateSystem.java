@@ -3,6 +3,7 @@ package com.oschrenk.humangeo.cs;
 import com.oschrenk.humangeo.core.Geographic3dCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 import com.oschrenk.humangeo.geom.Spheroid;
+import com.oschrenk.humangeo.io.Arrays;
 
 /**
  * A geographic coordinate system is a coordinate system that enables every
@@ -29,7 +30,10 @@ import com.oschrenk.humangeo.geom.Spheroid;
  */
 public class GeographicCoordinateSystem {
 
+	/** The spheroid. */
 	private final Spheroid spheroid;
+
+	/** The helper sphere. */
 	private final Sphere helperSphere;
 
 	/**
@@ -46,11 +50,18 @@ public class GeographicCoordinateSystem {
 		this.helperSphere = helperSphere;
 	}
 
+	/**
+	 * Gets the dimensions.
+	 * 
+	 * @return the dimensions
+	 */
 	public int getDimensions() {
 		return 3;
 	}
 
 	/**
+	 * Gets the spheroid.
+	 * 
 	 * @return the spheroid
 	 */
 	public Spheroid getSpheroid() {
@@ -58,6 +69,8 @@ public class GeographicCoordinateSystem {
 	}
 
 	/**
+	 * Gets the helper sphere.
+	 * 
 	 * @return the helperSphere
 	 */
 	public Sphere getHelperSphere() {
@@ -65,11 +78,13 @@ public class GeographicCoordinateSystem {
 	}
 
 	/**
-	 * To array.
+	 * Build a 3-dimensional array <code>[latitude,longitude,height]</code> from
+	 * a {@link Geographic3dCoordinate}
 	 * 
 	 * @param geographic3dCoordinate
-	 *            the geographic3d coordinate
-	 * @return the double[] [latitude,longitude,height]
+	 *            a 3-dimensional geographic coordinate
+	 * @return geographic coordinate as a 3-dimensional array in form of
+	 *         <code>[latitude,longitude,height]</code>
 	 */
 	public static double[] toArray(
 			final Geographic3dCoordinate geographic3dCoordinate) {
@@ -78,6 +93,19 @@ public class GeographicCoordinateSystem {
 				geographic3dCoordinate.getHeight() };
 	}
 
+	/**
+	 * Build a {@link Geographic3dCoordinate} from a 3-dimensional array
+	 * <code>[latitude,longitude,height]</code>
+	 * 
+	 * @param geographic3dCoordinate
+	 *            geographic coordinate as a 3-dimensional array in form of
+	 *            <code>[latitude,longitude,height]</code>
+	 * 
+	 * @return a 3-dimensional geographic coordinate
+	 * 
+	 * @see Arrays#map(double[], com.oschrenk.humangeo.io.Mask,
+	 *      com.oschrenk.humangeo.io.Mask)
+	 */
 	public static Geographic3dCoordinate fromArray(
 			final double[] geographic3dCoordinate) {
 		return new Geographic3dCoordinate(geographic3dCoordinate[0],

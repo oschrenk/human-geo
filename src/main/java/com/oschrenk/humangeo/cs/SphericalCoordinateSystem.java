@@ -4,6 +4,7 @@ import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.core.SphericalCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 
+// TODO: Auto-generated Javadoc
 /**
  * A spherical coordinate system is a coordinate system for three-dimensional
  * space where the position of a point is specified by three numbers: the radial
@@ -25,11 +26,11 @@ import com.oschrenk.humangeo.geom.Sphere;
  * </ul>
  * <p>
  * 
- * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class SphericalCoordinateSystem {
 
+	/** The sphere. */
 	private final Sphere sphere;
 
 	/**
@@ -42,10 +43,22 @@ public class SphericalCoordinateSystem {
 		this.sphere = sphere;
 	}
 
+	/**
+	 * Gets the dimensions.
+	 * 
+	 * @return the dimensions
+	 */
 	public int getDimensions() {
 		return 3;
 	}
 
+	/**
+	 * To cartesian coordinate.
+	 * 
+	 * @param sphericalCoordinate
+	 *            the spherical coordinate
+	 * @return the cartesian3d coordinate
+	 */
 	public Cartesian3dCoordinate toCartesianCoordinate(
 			final SphericalCoordinate sphericalCoordinate) {
 
@@ -62,6 +75,13 @@ public class SphericalCoordinateSystem {
 				Math.cos(Math.toRadians(sphericalCoordinate.getTheta())));
 	}
 
+	/**
+	 * From cartesian coordinate.
+	 * 
+	 * @param cartesianCoordinate
+	 *            the cartesian coordinate
+	 * @return the spherical coordinate
+	 */
 	public SphericalCoordinate fromCartesianCoordinate(
 			final Cartesian3dCoordinate cartesianCoordinate) {
 
@@ -88,7 +108,7 @@ public class SphericalCoordinateSystem {
 	}
 
 	/**
-	 * Build a spherical coordinate from an array.
+	 * Build a spherical coordinate from a 3-dimensional array.
 	 * 
 	 * @param sphericalCoordinate
 	 *            [r, theta, phi] the spherical coordinate
