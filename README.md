@@ -21,9 +21,4 @@ It offers:
 	- builder for spheroids
 	- reference spheres and ellipsoids
 
-It lacks:
-
-- Projections. Although it offers coordinate systems and algorithms fpr each coordinate system and ways to transform between coordinate systems.
-
-
 The library is in its early stages. If you find errors or think the API should be changed pleae open an issue or even better fork the project and create a pull request.
