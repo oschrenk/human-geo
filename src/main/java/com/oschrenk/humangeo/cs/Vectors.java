@@ -112,6 +112,20 @@ public class Vectors {
 	}
 
 	/**
+	 * Distance.
+	 * 
+	 * @param from
+	 *            the from
+	 * @param to
+	 *            the to
+	 * @return the cartesian3d coordinate
+	 */
+	public static final Cartesian3dCoordinate distance(
+			final Cartesian3dCoordinate from, final Cartesian3dCoordinate to) {
+		return minus(to, from);
+	}
+
+	/**
 	 * v-w
 	 * 
 	 * @param v
