@@ -72,7 +72,8 @@ public class Cartesian3dCoordinate extends Cartesian2dCoordinate {
 	 */
 	@Override
 	public String toString() {
-		return "CartesianCoordinate [z=" + z + "]";
+		return "Cartesian3dCoordinate [x=" + getX() + ", y=" + getY() + ", z="
+				+ z + "]";
 	}
 
 }
