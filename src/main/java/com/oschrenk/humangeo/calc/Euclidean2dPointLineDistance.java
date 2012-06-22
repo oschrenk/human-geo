@@ -9,7 +9,7 @@ import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
-public class EuclideanPointLineDistance implements
+public class Euclidean2dPointLineDistance implements
 		PointLineDistance<Cartesian2dCoordinate> {
 
 	/*
