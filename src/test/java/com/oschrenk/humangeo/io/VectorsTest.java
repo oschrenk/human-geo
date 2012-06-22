@@ -31,7 +31,7 @@ public class VectorsTest {
 	 */
 	@Test
 	public void testLengthCartesian3dCoordinate() {
-		assertEquals(4, Vectors.length(new Cartesian3dCoordinate(0, 4, 0)),
+		assertEquals(3, Vectors.length(new Cartesian3dCoordinate(2, 1, 2)),
 				0.0d);
 	}
 
@@ -73,6 +73,19 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
+	 * {@link com.oschrenk.humangeo.cs.Vectors#norm(com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * .
+	 */
+	@Test
+	public void testNorm() {
+		final Cartesian3dCoordinate a = new Cartesian3dCoordinate(2, 1, 2);
+		final Cartesian3dCoordinate normalizedA = Vectors.norm(a);
+
+		assertEquals(1, Vectors.length(normalizedA), 0.0d);
+	}
+
+	/**
+	 * Test method for
 	 * {@link com.oschrenk.humangeo.cs.Vectors#mult(double, com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
 	 * .
 	 */
@@ -99,6 +112,21 @@ public class VectorsTest {
 		final Cartesian3dCoordinate c = new Cartesian3dCoordinate(-2, 0, 2);
 
 		assertEquals(c, Vectors.minus(a, b));
+	}
+
+	/**
+	 * Test method for
+	 * {@link com.oschrenk.humangeo.cs.Vectors#distance(com.oschrenk.humangeo.core.Cartesian3dCoordinate, com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * .
+	 */
+	@Test
+	public void testDistance() {
+		final Cartesian3dCoordinate a = new Cartesian3dCoordinate(5, 1, 2);
+		final Cartesian3dCoordinate b = new Cartesian3dCoordinate(1, 4, 0);
+
+		final Cartesian3dCoordinate c = new Cartesian3dCoordinate(-4, 3, -2);
+
+		assertEquals(c, Vectors.distance(a, b));
 	}
 
 }
