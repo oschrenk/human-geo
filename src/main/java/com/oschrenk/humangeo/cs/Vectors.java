@@ -35,7 +35,7 @@ public class Vectors {
 		return Math.sqrt(cartesianCoordinate.getX()
 				* cartesianCoordinate.getX() + cartesianCoordinate.getY()
 				* cartesianCoordinate.getY() + cartesianCoordinate.getZ()
-				+ cartesianCoordinate.getZ());
+				* cartesianCoordinate.getZ());
 	}
 
 	/**
