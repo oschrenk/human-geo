@@ -51,6 +51,20 @@ public class GeographicCoordinateSystem {
 	}
 
 	/**
+	 * @return the spheroid
+	 */
+	public Spheroid getSpheroid() {
+		return spheroid;
+	}
+
+	/**
+	 * @return the helperSphere
+	 */
+	public Sphere getHelperSphere() {
+		return helperSphere;
+	}
+
+	/**
 	 * To array.
 	 * 
 	 * @param geographic3dCoordinate
@@ -69,5 +83,4 @@ public class GeographicCoordinateSystem {
 		return new Geographic3dCoordinate(geographic3dCoordinate[0],
 				geographic3dCoordinate[1], geographic3dCoordinate[2]);
 	}
-
 }
