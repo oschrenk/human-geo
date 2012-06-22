@@ -9,8 +9,12 @@ public class Cartesian3dCoordinate extends Cartesian2dCoordinate {
 	private final double z;
 
 	/**
+	 * Convenience constructor with <code>z=0</code>
+	 * 
 	 * @param x
+	 *            the x
 	 * @param y
+	 *            the y
 	 */
 	public Cartesian3dCoordinate(final double x, final double y) {
 		super(x, y);
@@ -27,6 +31,40 @@ public class Cartesian3dCoordinate extends Cartesian2dCoordinate {
 	 */
 	public double getZ() {
 		return z;
+	}
+
+	/*
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		long temp;
+		temp = Double.doubleToLongBits(z);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	/*
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		final Cartesian3dCoordinate other = (Cartesian3dCoordinate) obj;
+		if (Double.doubleToLongBits(z) != Double.doubleToLongBits(other.z)) {
+			return false;
+		}
+		return true;
 	}
 
 	/*

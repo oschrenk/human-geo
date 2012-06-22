@@ -10,31 +10,27 @@ import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
 public class Vectors {
 
 	/**
-	 * Calculates p-a.
+	 * Length of vector
 	 * 
-	 * @param x1
-	 *            the x1
-	 * @param y1
-	 *            the y1
-	 * @param x2
-	 *            the x2
-	 * @param y2
-	 *            the y2
-	 * @return the point
+	 * @param cartesianCoordinate
+	 *            the cartesian coordinate
+	 * @return the length of the vector
 	 */
-	protected static final double[] distanceVector(final double x1,
-			final double y1, final double x2, final double y2) {
-		return new double[] { x2 - x1, y2 - y1 };
+	public static final double length(
+			final Cartesian2dCoordinate cartesianCoordinate) {
+		return Math.sqrt(cartesianCoordinate.getX()
+				* cartesianCoordinate.getX() + cartesianCoordinate.getY()
+				* cartesianCoordinate.getY());
 	}
 
-	protected static final double length(
-			final Cartesian2dCoordinate cartesian2dCoordinate) {
-		return Math.sqrt(cartesian2dCoordinate.getX()
-				* cartesian2dCoordinate.getX() + cartesian2dCoordinate.getY()
-				* cartesian2dCoordinate.getY());
-	}
-
-	protected static final double length(
+	/**
+	 * Length of vector
+	 * 
+	 * @param cartesianCoordinate
+	 *            the cartesian coordinate
+	 * @return length of the vector
+	 */
+	public static final double length(
 			final Cartesian3dCoordinate cartesianCoordinate) {
 		return Math.sqrt(cartesianCoordinate.getX()
 				* cartesianCoordinate.getX() + cartesianCoordinate.getY()
@@ -42,7 +38,14 @@ public class Vectors {
 				+ cartesianCoordinate.getZ());
 	}
 
-	protected static final double length(final double[] v) {
+	/**
+	 * Length of vector with arbitrary dimensions
+	 * 
+	 * @param v
+	 *            the vector v
+	 * @return the length of the vector
+	 */
+	public static final double length(final double[] v) {
 		double distanceSquared = 0;
 		for (final double element : v) {
 			distanceSquared += element * element;
@@ -51,48 +54,63 @@ public class Vectors {
 	}
 
 	/**
-	 * Cross.
+	 * a dot b
 	 * 
-	 * @param x1
-	 *            the x1
-	 * @param y1
-	 *            the y1
-	 * @param x2
-	 *            the x2
-	 * @param y2
-	 *            the y2
-	 * @return the point
+	 * @param a
+	 *            the vector a
+	 * @param b
+	 *            the vector a
+	 * @return dot product
 	 */
-	protected static final double[] cross(final double x1, final double y1,
-			final double x2, final double y2) {
-		final double[] c = new double[] { y1 * 0 - 0 * y2, 0 * x2 - x1 * 0,
-				x1 * y2 - y1 * x2 };
-		return c;
+	public static final double dot(final Cartesian3dCoordinate a,
+			final Cartesian3dCoordinate b) {
+		return a.getX() * b.getX() + a.getY() * b.getY() + a.getZ() * b.getZ();
 	}
 
 	/**
-	 * Dot.
+	 * a cross b.
 	 * 
-	 * @param x1
-	 *            the x1
-	 * @param y1
-	 *            the y1
-	 * @param x2
-	 *            the x2
-	 * @param y2
-	 *            the y2
-	 * @return the double
+	 * @param a
+	 *            the vector a
+	 * @param b
+	 *            the vector b
+	 * @return the cross product of a and b
 	 */
-	protected static final double dot(final double x1, final double y1,
-			final double x2, final double y2) {
-		return x1 * x2 + y1 * y2;
+	public static final Cartesian3dCoordinate cross(
+			final Cartesian3dCoordinate a, final Cartesian3dCoordinate b) {
+		return new Cartesian3dCoordinate(a.getY() * b.getZ() - a.getZ()
+				* b.getY(), a.getZ() * b.getX() - a.getX() * b.getZ(), a.getX()
+				* b.getY() - a.getY() * b.getX());
 	}
 
-	protected static final double[] mult3d(final double c, final double[] v) {
-		return new double[] { c * v[0], c * v[1], c * v[2] };
+	/**
+	 * c * v.
+	 * 
+	 * @param c
+	 *            the constant c
+	 * @param v
+	 *            the vector v
+	 * @return the cartesian3d coordinate
+	 */
+	public static final Cartesian3dCoordinate mult(final double c,
+			final Cartesian3dCoordinate v) {
+		return new Cartesian3dCoordinate(c * v.getX(), c * v.getY(), c
+				* v.getZ());
 	}
 
-	protected static final double[] minus3d(final double[] v, final double[] w) {
-		return new double[] { v[0] - w[0], v[1] - w[1], v[2] - w[2] };
+	/**
+	 * v-w
+	 * 
+	 * @param v
+	 *            the v
+	 * @param w
+	 *            the w
+	 * @return the double[]
+	 */
+	public static final Cartesian3dCoordinate minus(
+			final Cartesian3dCoordinate v, final Cartesian3dCoordinate w) {
+		return new Cartesian3dCoordinate(v.getX() - w.getX(), v.getY()
+				- w.getY(), v.getZ() - w.getZ());
 	}
+
 }
