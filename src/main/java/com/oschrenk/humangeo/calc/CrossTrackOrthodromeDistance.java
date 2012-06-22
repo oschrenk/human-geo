@@ -13,7 +13,7 @@ import com.oschrenk.humangeo.core.Geographic2dCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 
 /**
- * Distance of a point from a great-circle path
+ * Distance of a point to a line on a great-circle path
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */

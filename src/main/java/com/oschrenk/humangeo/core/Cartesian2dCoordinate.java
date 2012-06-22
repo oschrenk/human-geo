@@ -17,7 +17,6 @@ public class Cartesian2dCoordinate {
 
 	/**
 	 * @return the x
-	 * @category getter
 	 */
 	public double getX() {
 		return x;
@@ -25,7 +24,6 @@ public class Cartesian2dCoordinate {
 
 	/**
 	 * @return the y
-	 * @category getter
 	 */
 	public double getY() {
 		return y;

@@ -24,7 +24,6 @@ public class Cartesian3dCoordinate extends Cartesian2dCoordinate {
 
 	/**
 	 * @return the z
-	 * @category getter
 	 */
 	public double getZ() {
 		return z;

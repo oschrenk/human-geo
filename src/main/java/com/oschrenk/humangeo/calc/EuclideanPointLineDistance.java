@@ -4,6 +4,8 @@ import com.oschrenk.humangeo.api.PointLineDistance;
 import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
 
 /**
+ * Distance between a point and a line in euclidean space calculated using
+ * vectors.
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */

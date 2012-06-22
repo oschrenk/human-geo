@@ -13,7 +13,6 @@ import com.oschrenk.humangeo.core.Geographic2dCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 
 /**
- * 
  * The along-track distance, is the distance from the start point to the closest
  * point on the path to the third point along a great-circle path.
  * 
@@ -42,8 +41,8 @@ public class AlongTrackOrthodromeDistance implements
 
 		final double r = sphere.getRadius();
 		final double d13 = new HaversineDistance(sphere).distance(from, point);
-		final double dXt = new CrossTrackOrthodromeDistance(sphere).distance(point, from,
-				to);
+		final double dXt = new CrossTrackOrthodromeDistance(sphere).distance(
+				point, from, to);
 
 		// @formatter:off
 		final double dAt = //

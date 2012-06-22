@@ -37,6 +37,19 @@ public class HaversineDistance implements
 		this.sphere = sphere;
 	}
 
+	/**
+	 * Distance.
+	 * 
+	 * @param latitudeFrom
+	 *            the latitude from
+	 * @param longitudeFrom
+	 *            the longitude from
+	 * @param latitudeTo
+	 *            the latitude to
+	 * @param longitudeTo
+	 *            the longitude to
+	 * @return the double
+	 */
 	public double distance(final double latitudeFrom,
 			final double longitudeFrom, final double latitudeTo,
 			final double longitudeTo) {
@@ -56,6 +69,11 @@ public class HaversineDistance implements
 		return sphere.getRadius() * c;
 	}
 
+	/*
+	 * @see
+	 * com.oschrenk.humangeo.api.PointPointDistance#distance(java.lang.Object,
+	 * java.lang.Object)
+	 */
 	@Override
 	public double distance(final Geographic2dCoordinate from,
 			final Geographic2dCoordinate to) {

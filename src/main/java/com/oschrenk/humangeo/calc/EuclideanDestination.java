@@ -11,6 +11,19 @@ import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
  */
 public class EuclideanDestination implements Destination<Cartesian2dCoordinate> {
 
+	/**
+	 * Destination.
+	 * 
+	 * @param x
+	 *            the x
+	 * @param y
+	 *            the y
+	 * @param initialBearing
+	 *            the initial bearing
+	 * @param distance
+	 *            the distance
+	 * @return the cartesian2d coordinate
+	 */
 	public Cartesian2dCoordinate destination(final double x, final double y,
 			final double initialBearing, final double distance) {
 		final double a = Math.toRadians(initialBearing);
@@ -21,6 +34,10 @@ public class EuclideanDestination implements Destination<Cartesian2dCoordinate> 
 		return new Cartesian2dCoordinate(x2, y2);
 	}
 
+	/*
+	 * @see com.oschrenk.humangeo.api.Destination#destination(java.lang.Object,
+	 * double, double)
+	 */
 	@Override
 	public Cartesian2dCoordinate destination(
 			final Cartesian2dCoordinate coordinate,
