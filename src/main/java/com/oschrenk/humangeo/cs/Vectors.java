@@ -84,6 +84,19 @@ public class Vectors {
 	}
 
 	/**
+	 * Normalize vector v
+	 * 
+	 * @param v
+	 *            the v
+	 * @return normalized vector
+	 */
+	public static final Cartesian3dCoordinate norm(final Cartesian3dCoordinate v) {
+		final double length = length(v);
+		final double invertedLength = 1 / length;
+		return mult(invertedLength, v);
+	}
+
+	/**
 	 * c * v.
 	 * 
 	 * @param c
