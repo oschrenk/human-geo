@@ -3,8 +3,8 @@ package com.oschrenk.humangeo.cs;
 import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.core.SphericalCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
+import com.oschrenk.humangeo.io.Arrays;
 
-// TODO: Auto-generated Javadoc
 /**
  * A spherical coordinate system is a coordinate system for three-dimensional
  * space where the position of a point is specified by three numbers: the radial
@@ -113,6 +113,9 @@ public class SphericalCoordinateSystem {
 	 * @param sphericalCoordinate
 	 *            [r, theta, phi] the spherical coordinate
 	 * @return the spherical coordinate
+	 * 
+	 @see Arrays#map(double[], com.oschrenk.humangeo.io.Mask,
+	 *      com.oschrenk.humangeo.io.Mask)
 	 */
 	public SphericalCoordinate fromArray(final double[] sphericalCoordinate) {
 		return new SphericalCoordinate(sphericalCoordinate[0],
