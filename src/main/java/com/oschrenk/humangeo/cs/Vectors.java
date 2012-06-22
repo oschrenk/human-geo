@@ -7,7 +7,7 @@ import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
  * 
  * @author Oliver Schrenk <oliver.schrenk@q2web.de>
  */
-public class Vector {
+public class Vectors {
 
 	/**
 	 * Calculates p-a.
@@ -88,11 +88,11 @@ public class Vector {
 		return x1 * x2 + y1 * y2;
 	}
 
-	protected static final double[] mult(final double c, final double[] v) {
+	protected static final double[] mult3d(final double c, final double[] v) {
 		return new double[] { c * v[0], c * v[1], c * v[2] };
 	}
 
-	protected static final double[] minus(final double[] v, final double[] w) {
+	protected static final double[] minus3d(final double[] v, final double[] w) {
 		return new double[] { v[0] - w[0], v[1] - w[1], v[2] - w[2] };
 	}
 }
