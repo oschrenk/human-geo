@@ -1,4 +1,4 @@
-package com.oschrenk.humangeo.trans;
+package com.oschrenk.humangeo.cs.trans;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
 import com.oschrenk.humangeo.core.Spheroid;

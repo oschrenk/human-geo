@@ -1,4 +1,4 @@
-package com.oschrenk.humangeo.trans;
+package com.oschrenk.humangeo.cs.trans;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
 import com.oschrenk.humangeo.core.Sphere;
@@ -22,13 +22,13 @@ import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
-public class Geographic2dToCartesian3dOnAuxiliarySphereCoordinateTransformation
+public class Geographic3dToCartesian3dOnAuxiliarySphereCoordinateTransformation
 		implements
 		CoordinateTransformation<Geographic2dCoordinate, Cartesian3dCoordinate> {
 
 	private final Sphere sphere;
 
-	public Geographic2dToCartesian3dOnAuxiliarySphereCoordinateTransformation(
+	public Geographic3dToCartesian3dOnAuxiliarySphereCoordinateTransformation(
 			final Sphere sphere) {
 		this.sphere = sphere;
 	}
