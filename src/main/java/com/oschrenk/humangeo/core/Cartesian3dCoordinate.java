@@ -8,19 +8,6 @@ public class Cartesian3dCoordinate extends Cartesian2dCoordinate {
 
 	private final double z;
 
-	/**
-	 * Convenience constructor with <code>z=0</code>
-	 * 
-	 * @param x
-	 *            the x
-	 * @param y
-	 *            the y
-	 */
-	public Cartesian3dCoordinate(final double x, final double y) {
-		super(x, y);
-		z = 0;
-	}
-
 	public Cartesian3dCoordinate(final double x, final double y, final double z) {
 		super(x, y);
 		this.z = z;

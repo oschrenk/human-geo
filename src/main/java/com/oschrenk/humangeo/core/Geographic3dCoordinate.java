@@ -28,15 +28,6 @@ public class Geographic3dCoordinate extends Geographic2dCoordinate {
 
 	private final double height;
 
-	/**
-	 * @param latitude
-	 * @param longitude
-	 */
-	public Geographic3dCoordinate(final double latitude, final double longitude) {
-		super(latitude, longitude);
-		height = 0;
-	}
-
 	public Geographic3dCoordinate(final double latitude,
 			final double longitude, final double height) {
 		super(latitude, longitude);
