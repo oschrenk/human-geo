@@ -21,4 +21,4 @@ It offers:
 	- builder for spheroids
 	- reference spheres and ellipsoids
 
-The library is in its early stages. If you find errors or think the API should be changed pleae open an issue or even better fork the project and create a pull request.
+The library is in its early stages. If you find errors or think the API should be changed please open an issue or even better fork the project and create a pull request.
