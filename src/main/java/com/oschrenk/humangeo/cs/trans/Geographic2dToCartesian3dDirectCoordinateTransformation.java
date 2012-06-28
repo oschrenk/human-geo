@@ -43,14 +43,14 @@ public class Geographic2dToCartesian3dDirectCoordinateTransformation implements
 		final double nu = getNu(spheroid.getSemiMajorAxis(), e2,
 				from.getLatitude());
 		final double cosPhi = Math.cos(Math.toRadians(from.getLatitude()));
-		final double sinPhi = Math.cos(Math.toRadians(from.getLatitude()));
+		final double sinPhi = Math.sin(Math.toRadians(from.getLatitude()));
 		final double cosLamda = Math.cos(Math.toRadians(from.getLongitude()));
 		final double sinLamda = Math.sin(Math.toRadians(from.getLongitude()));
 		// final double h = 0;
-		// (nu +h) cosPhi cosLamda
+		// (nu + h) cosPhi cosLamda
 		final double x = nu * cosPhi * cosLamda;
 		final double y = nu * cosPhi * sinLamda;
-		final double z = nu * (1 - e2) * sinPhi;
+		final double z = (nu * (1 - e2)) * sinPhi;
 
 		return new Cartesian3dCoordinate(x, y, z);
 	}

@@ -1,5 +1,7 @@
 package com.oschrenk.humangeo.cs.trans;
 
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
@@ -24,18 +26,17 @@ public class Geographic2dToCartesian3dDirectCoordinateTransformationTest {
 
 		final Geographic2dCoordinate paris = new Geographic2dCoordinate(
 				latitude, longitude);
-		System.out.println(paris);
 
 		final Cartesian3dCoordinate cartesianParis = transformationForward
 				.transform(paris);
 
-		System.out.println(cartesianParis);
+		final double x = 4202917.917;
+		final double y = 171255.782;
+		final double z = 4778378.571;
 
-		final CoordinateTransformation<Cartesian3dCoordinate, Geographic2dCoordinate> transformationReverse = new Cartesian3dToGeographic2dTomsCoordinateTransformation(
-				Ellipsoids.WGS_84);
+		assertEquals(x, cartesianParis.getX(), 0.001);
+		assertEquals(y, cartesianParis.getY(), 0.001);
+		assertEquals(z, cartesianParis.getZ(), 0.001);
 
-		final Geographic2dCoordinate reverseParis = transformationReverse
-				.transform(cartesianParis);
-		System.out.println(reverseParis);
 	}
 }
