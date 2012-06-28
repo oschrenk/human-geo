@@ -1,6 +1,5 @@
-package com.oschrenk.humangeo.core;
+package com.oschrenk.humangeo.cs;
 
-import com.oschrenk.humangeo.cs.SphericalCoordinateSystem;
 
 /**
  * A spherical coordinate

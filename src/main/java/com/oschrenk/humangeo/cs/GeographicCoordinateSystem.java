@@ -1,6 +1,5 @@
 package com.oschrenk.humangeo.cs;
 
-import com.oschrenk.humangeo.core.Geographic3dCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 import com.oschrenk.humangeo.geom.Spheroid;
 import com.oschrenk.humangeo.io.Arrays;

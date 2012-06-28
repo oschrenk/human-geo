@@ -1,8 +1,8 @@
 package com.oschrenk.humangeo.trans;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
-import com.oschrenk.humangeo.core.PolarCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian2dCoordinate;
+import com.oschrenk.humangeo.cs.PolarCoordinate;
 
 /**
  * 

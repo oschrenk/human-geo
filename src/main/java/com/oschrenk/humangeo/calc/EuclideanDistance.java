@@ -1,7 +1,7 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Distance;
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian2dCoordinate;
 
 /**
  * Calculates the distance of two points using euclidean distance.

@@ -1,7 +1,5 @@
 package com.oschrenk.humangeo.cs;
 
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
-import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
 
 /**
  * 

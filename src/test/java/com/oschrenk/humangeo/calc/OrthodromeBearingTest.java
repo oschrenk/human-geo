@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.oschrenk.humangeo.calc.OrthodromeBearing;
-import com.oschrenk.humangeo.core.Geographic2dCoordinate;
+import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
 
 public class OrthodromeBearingTest {
 

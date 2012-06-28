@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.oschrenk.humangeo.api.Bearing;
 import com.oschrenk.humangeo.calc.EuclideanBearing;
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian2dCoordinate;
 
 public class EuclideanBearingTest {
 

@@ -1,8 +1,8 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Distance;
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
 import com.oschrenk.humangeo.core.Segment;
+import com.oschrenk.humangeo.cs.Cartesian2dCoordinate;
 
 /**
  * Distance between a point and a line in euclidean space calculated using

@@ -1,8 +1,8 @@
 package com.oschrenk.humangeo.trans;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
-import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
-import com.oschrenk.humangeo.core.SphericalCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
+import com.oschrenk.humangeo.cs.SphericalCoordinate;
 
 /**
  * 

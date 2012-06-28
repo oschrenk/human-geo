@@ -9,7 +9,7 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Bearing;
-import com.oschrenk.humangeo.core.Geographic2dCoordinate;
+import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
 
 /**
  * Computes the initial bearing following the orthodrome path (on a great

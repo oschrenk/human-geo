@@ -1,6 +1,5 @@
-package com.oschrenk.humangeo.core;
+package com.oschrenk.humangeo.cs;
 
-import com.oschrenk.humangeo.cs.PolarCoordinateSystem;
 
 /**
  * A polar coordinate is a coordinate in the {@link PolarCoordinateSystem}

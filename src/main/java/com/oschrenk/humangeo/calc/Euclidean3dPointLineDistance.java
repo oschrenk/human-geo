@@ -1,8 +1,8 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Distance;
-import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.core.Segment;
+import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.cs.Vectors;
 
 /**

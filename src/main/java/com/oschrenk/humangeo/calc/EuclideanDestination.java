@@ -1,7 +1,7 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Destination;
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian2dCoordinate;
 
 /**
  * Calculates a destination given a start point, initial bearing and a distance

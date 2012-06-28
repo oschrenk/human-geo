@@ -1,4 +1,4 @@
-package com.oschrenk.humangeo.core;
+package com.oschrenk.humangeo.cs;
 
 /**
  * 

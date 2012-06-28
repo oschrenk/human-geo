@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.core.Segment;
+import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
 
 /**
  * 

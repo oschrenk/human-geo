@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import com.oschrenk.humangeo.api.Destination;
 import com.oschrenk.humangeo.calc.EuclideanDestination;
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian2dCoordinate;
 
 public class EuclideanDestinationTest {
 

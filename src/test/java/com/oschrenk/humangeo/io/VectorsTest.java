@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
-import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian2dCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.cs.Vectors;
 
 /**
@@ -16,7 +16,7 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
-	 * {@link com.oschrenk.humangeo.cs.Vectors#length(com.oschrenk.humangeo.core.Cartesian2dCoordinate)}
+	 * {@link com.oschrenk.humangeo.cs.Vectors#length(com.oschrenk.humangeo.cs.Cartesian2dCoordinate)}
 	 * .
 	 */
 	@Test
@@ -26,7 +26,7 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
-	 * {@link com.oschrenk.humangeo.cs.Vectors#length(com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * {@link com.oschrenk.humangeo.cs.Vectors#length(com.oschrenk.humangeo.cs.Cartesian3dCoordinate)}
 	 * .
 	 */
 	@Test
@@ -46,7 +46,7 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
-	 * {@link com.oschrenk.humangeo.cs.Vectors#dot(com.oschrenk.humangeo.core.Cartesian3dCoordinate, com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * {@link com.oschrenk.humangeo.cs.Vectors#dot(com.oschrenk.humangeo.cs.Cartesian3dCoordinate, com.oschrenk.humangeo.cs.Cartesian3dCoordinate)}
 	 * .
 	 */
 	@Test
@@ -58,7 +58,7 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
-	 * {@link com.oschrenk.humangeo.cs.Vectors#cross(com.oschrenk.humangeo.core.Cartesian3dCoordinate, com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * {@link com.oschrenk.humangeo.cs.Vectors#cross(com.oschrenk.humangeo.cs.Cartesian3dCoordinate, com.oschrenk.humangeo.cs.Cartesian3dCoordinate)}
 	 * .
 	 */
 	@Test
@@ -73,7 +73,7 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
-	 * {@link com.oschrenk.humangeo.cs.Vectors#norm(com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * {@link com.oschrenk.humangeo.cs.Vectors#norm(com.oschrenk.humangeo.cs.Cartesian3dCoordinate)}
 	 * .
 	 */
 	@Test
@@ -86,7 +86,7 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
-	 * {@link com.oschrenk.humangeo.cs.Vectors#mult(double, com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * {@link com.oschrenk.humangeo.cs.Vectors#mult(double, com.oschrenk.humangeo.cs.Cartesian3dCoordinate)}
 	 * .
 	 */
 	@Test
@@ -101,7 +101,7 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
-	 * {@link com.oschrenk.humangeo.cs.Vectors#minus(com.oschrenk.humangeo.core.Cartesian3dCoordinate, com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * {@link com.oschrenk.humangeo.cs.Vectors#minus(com.oschrenk.humangeo.cs.Cartesian3dCoordinate, com.oschrenk.humangeo.cs.Cartesian3dCoordinate)}
 	 * .
 	 */
 	@Test
@@ -116,7 +116,7 @@ public class VectorsTest {
 
 	/**
 	 * Test method for
-	 * {@link com.oschrenk.humangeo.cs.Vectors#distance(com.oschrenk.humangeo.core.Cartesian3dCoordinate, com.oschrenk.humangeo.core.Cartesian3dCoordinate)}
+	 * {@link com.oschrenk.humangeo.cs.Vectors#distance(com.oschrenk.humangeo.cs.Cartesian3dCoordinate, com.oschrenk.humangeo.cs.Cartesian3dCoordinate)}
 	 * .
 	 */
 	@Test

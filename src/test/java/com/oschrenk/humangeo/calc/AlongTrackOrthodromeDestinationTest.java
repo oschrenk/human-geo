@@ -2,8 +2,8 @@ package com.oschrenk.humangeo.calc;
 
 import org.junit.Test;
 
-import com.oschrenk.humangeo.core.Geographic2dCoordinate;
 import com.oschrenk.humangeo.core.Segment;
+import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
 import com.oschrenk.humangeo.ref.Spheres;
 
 /**

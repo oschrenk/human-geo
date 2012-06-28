@@ -1,7 +1,7 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Bearing;
-import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
+import com.oschrenk.humangeo.cs.Cartesian2dCoordinate;
 
 /**
  * Computes the initial bearing assuming the coordinates are points in

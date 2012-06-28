@@ -1,7 +1,5 @@
 package com.oschrenk.humangeo.cs;
 
-import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
-import com.oschrenk.humangeo.core.SphericalCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 import com.oschrenk.humangeo.io.Arrays;
 
