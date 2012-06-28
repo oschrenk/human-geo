@@ -1,4 +1,4 @@
-package com.oschrenk.humangeo.geom;
+package com.oschrenk.humangeo.core;
 
 /**
  * A spheroid, or ellipsoid of revolution is a quadric surface obtained by

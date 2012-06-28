@@ -1,9 +1,9 @@
 package com.oschrenk.humangeo.trans;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
+import com.oschrenk.humangeo.core.Sphere;
 import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.geom.Sphere;
 
 /**
  * Every point that is expressed in ellipsoidal coordinates can be expressed as

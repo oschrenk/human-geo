@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.oschrenk.humangeo.core.Spheroid;
+import com.oschrenk.humangeo.core.SpheroidBuilder;
+
 public class SpheroidBuilderTest {
 
 	private static final double WGS84_FLATTENING = 0.0033528106718309896;

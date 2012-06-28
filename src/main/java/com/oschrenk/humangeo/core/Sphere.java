@@ -1,4 +1,4 @@
-package com.oschrenk.humangeo.geom;
+package com.oschrenk.humangeo.core;
 
 /**
  * A sphere.

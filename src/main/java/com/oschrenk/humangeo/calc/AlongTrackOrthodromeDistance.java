@@ -10,8 +10,8 @@ package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Distance;
 import com.oschrenk.humangeo.core.Segment;
+import com.oschrenk.humangeo.core.Sphere;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.geom.Sphere;
 
 /**
  * The along-track distance, is the distance from the start point to the closest

@@ -9,8 +9,8 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Destination;
+import com.oschrenk.humangeo.core.Sphere;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.geom.Sphere;
 
 /**
  * Calculates a destination given a start point, intitial bearing and a distance

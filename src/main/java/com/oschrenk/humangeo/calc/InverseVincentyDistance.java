@@ -9,8 +9,8 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Distance;
+import com.oschrenk.humangeo.core.Spheroid;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.geom.Spheroid;
 
 /**
  * Calculates distance of two points on a sphere in m using Thaddeus Vincenty's

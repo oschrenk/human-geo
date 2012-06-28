@@ -1,6 +1,6 @@
 package com.oschrenk.humangeo.cs;
 
-import com.oschrenk.humangeo.geom.Sphere;
+import com.oschrenk.humangeo.core.Sphere;
 import com.oschrenk.humangeo.io.Arrays;
 
 /**

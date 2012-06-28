@@ -2,8 +2,8 @@ package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.PointSegmentDestination;
 import com.oschrenk.humangeo.core.Segment;
+import com.oschrenk.humangeo.core.Sphere;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.geom.Sphere;
 
 /**
  * Calculates the coordinates of the interception point of the shortest line of

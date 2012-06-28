@@ -1,10 +1,10 @@
 package com.oschrenk.humangeo.trans;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
+import com.oschrenk.humangeo.core.Spheroid;
+import com.oschrenk.humangeo.core.Spheroids;
 import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.cs.Geographic3dCoordinate;
-import com.oschrenk.humangeo.geom.Spheroid;
-import com.oschrenk.humangeo.geom.Spheroids;
 
 /**
  * Every point that is expressed in ellipsoidal coordinates can be expressed as

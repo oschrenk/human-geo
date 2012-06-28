@@ -1,7 +1,7 @@
 package com.oschrenk.humangeo.ref;
 
-import com.oschrenk.humangeo.geom.Spheroid;
-import com.oschrenk.humangeo.geom.SpheroidBuilder;
+import com.oschrenk.humangeo.core.Spheroid;
+import com.oschrenk.humangeo.core.SpheroidBuilder;
 
 /**
  * Holds default ellipsoids.

@@ -9,8 +9,8 @@
 package com.oschrenk.humangeo.calc;
 
 import com.oschrenk.humangeo.api.Distance;
+import com.oschrenk.humangeo.core.Sphere;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.geom.Sphere;
 
 /**
  * Calculates distance of two points on a sphere in m using the Haversine
