@@ -1,4 +1,4 @@
-package com.oschrenk.humangeo.geom;
+package com.oschrenk.humangeo.core;
 
 import static org.junit.Assert.*;
 
