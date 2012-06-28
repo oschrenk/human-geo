@@ -1,6 +1,6 @@
 package com.oschrenk.humangeo.ref;
 
-import static com.oschrenk.humangeo.ref.Spheroids.*;
+import static com.oschrenk.humangeo.ref.Ellipsoids.*;
 import static org.junit.Assert.*;
 
 import org.junit.Test;

@@ -11,7 +11,7 @@ import com.oschrenk.humangeo.core.SpheroidBuilder;
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
-public class Spheroids {
+public class Ellipsoids {
 
 	/** The Constant AIRY_1830. */
 	public static final Spheroid AIRY_1830 = new SpheroidBuilder()
