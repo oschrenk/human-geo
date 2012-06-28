@@ -1,7 +1,8 @@
 package com.oschrenk.humangeo.calc;
 
-import com.oschrenk.humangeo.api.PointLineDistance;
+import com.oschrenk.humangeo.api.Distance;
 import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
+import com.oschrenk.humangeo.core.Segment;
 
 /**
  * Distance between a point and a line in euclidean space calculated using
@@ -10,16 +11,18 @@ import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class Euclidean2dPointLineDistance implements
-		PointLineDistance<Cartesian2dCoordinate> {
+		Distance<Cartesian2dCoordinate, Segment<Cartesian2dCoordinate>> {
 
 	/*
-	 * @see
-	 * com.oschrenk.humangeo.api.PointLineDistance#distance(java.lang.Object,
-	 * java.lang.Object, java.lang.Object)
+	 * @see com.oschrenk.humangeo.api.Distance#distance(java.lang.Object,
+	 * java.lang.Object)
 	 */
 	@Override
 	public double distance(final Cartesian2dCoordinate point,
-			final Cartesian2dCoordinate from, final Cartesian2dCoordinate to) {
+			final Segment<Cartesian2dCoordinate> segment) {
+		final Cartesian2dCoordinate from = segment.getFrom();
+		final Cartesian2dCoordinate to = segment.getTo();
+
 		final double normalLength = Math.sqrt((to.getX() - from.getX())
 				* (to.getX() - from.getX()) + (to.getY() - from.getY())
 				* (to.getY() - from.getY()));

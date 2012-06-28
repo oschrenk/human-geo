@@ -8,8 +8,9 @@
  */
 package com.oschrenk.humangeo.calc;
 
-import com.oschrenk.humangeo.api.PointLineDistance;
+import com.oschrenk.humangeo.api.Distance;
 import com.oschrenk.humangeo.core.Geographic2dCoordinate;
+import com.oschrenk.humangeo.core.Segment;
 import com.oschrenk.humangeo.geom.Sphere;
 
 /**
@@ -18,7 +19,7 @@ import com.oschrenk.humangeo.geom.Sphere;
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class CrossTrackOrthodromeDistance implements
-		PointLineDistance<Geographic2dCoordinate> {
+		Distance<Geographic2dCoordinate, Segment<Geographic2dCoordinate>> {
 
 	private final Sphere sphere;
 
@@ -28,20 +29,22 @@ public class CrossTrackOrthodromeDistance implements
 	}
 
 	/*
-	 * @see
-	 * com.oschrenk.humangeo.api.PointLineDistance#distance(java.lang.Object,
-	 * java.lang.Object, java.lang.Object)
+	 * @see com.oschrenk.humangeo.api.Distance#distance(java.lang.Object,
+	 * java.lang.Object)
 	 */
 	@Override
 	public double distance(final Geographic2dCoordinate point,
-			final Geographic2dCoordinate from, final Geographic2dCoordinate to) {
+			final Segment<Geographic2dCoordinate> segment) {
 
 		// dXt = Math.asin(Math.sin(d13/r)*Math.sin(b13-b12)) * r;
 
 		final double r = sphere.getRadius();
-		final double b12 = new OrthodromeBearing().bearing(from, to);
-		final double b13 = new OrthodromeBearing().bearing(from, point);
-		final double d13 = new HaversineDistance(sphere).distance(from, point);
+		final double b12 = new OrthodromeBearing().bearing(segment.getFrom(),
+				segment.getTo());
+		final double b13 = new OrthodromeBearing().bearing(segment.getFrom(),
+				point);
+		final double d13 = new HaversineDistance(sphere).distance(
+				segment.getFrom(), point);
 
 		// @formatter:off
 		final double dt = //

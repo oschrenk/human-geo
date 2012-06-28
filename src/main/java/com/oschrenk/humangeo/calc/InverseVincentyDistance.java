@@ -8,7 +8,7 @@
  */
 package com.oschrenk.humangeo.calc;
 
-import com.oschrenk.humangeo.api.PointPointDistance;
+import com.oschrenk.humangeo.api.Distance;
 import com.oschrenk.humangeo.core.Geographic2dCoordinate;
 import com.oschrenk.humangeo.geom.Spheroid;
 
@@ -22,7 +22,7 @@ import com.oschrenk.humangeo.geom.Spheroid;
  * 
  */
 public class InverseVincentyDistance implements
-		PointPointDistance<Geographic2dCoordinate> {
+		Distance<Geographic2dCoordinate, Geographic2dCoordinate> {
 
 	/** The spheroid. */
 	private final Spheroid spheroid;

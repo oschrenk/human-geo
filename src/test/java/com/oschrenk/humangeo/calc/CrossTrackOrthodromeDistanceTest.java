@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.oschrenk.humangeo.core.Geographic2dCoordinate;
+import com.oschrenk.humangeo.core.Segment;
 import com.oschrenk.humangeo.ref.Spheres;
 
 /**
@@ -19,7 +20,7 @@ public class CrossTrackOrthodromeDistanceTest {
 		final Geographic2dCoordinate to = new Geographic2dCoordinate(90, 0);
 		final Geographic2dCoordinate point = new Geographic2dCoordinate(45, 0);
 		final double distance = new CrossTrackOrthodromeDistance(Spheres.EARTH)
-				.distance(point, from, to);
+				.distance(point, new Segment<Geographic2dCoordinate>(from, to));
 
 		assertEquals(0.0, distance, 0d);
 	}
@@ -30,7 +31,7 @@ public class CrossTrackOrthodromeDistanceTest {
 		final Geographic2dCoordinate to = new Geographic2dCoordinate(90, 0);
 		final Geographic2dCoordinate point = new Geographic2dCoordinate(0, 45);
 		final double distance = new CrossTrackOrthodromeDistance(Spheres.EARTH)
-				.distance(point, from, to);
+				.distance(point, new Segment<Geographic2dCoordinate>(from, to));
 
 		final double circumferenceEarth = 2 * Math.PI
 				* Spheres.EARTH.getRadius();

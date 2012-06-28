@@ -1,6 +1,6 @@
 package com.oschrenk.humangeo.calc;
 
-import com.oschrenk.humangeo.api.PointPointDistance;
+import com.oschrenk.humangeo.api.Distance;
 import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
 
 /**
@@ -9,7 +9,7 @@ import com.oschrenk.humangeo.core.Cartesian2dCoordinate;
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class EuclideanDistance implements
-		PointPointDistance<Cartesian2dCoordinate> {
+		Distance<Cartesian2dCoordinate, Cartesian2dCoordinate> {
 
 	/**
 	 * Distance.

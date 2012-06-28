@@ -8,7 +8,7 @@
  */
 package com.oschrenk.humangeo.calc;
 
-import com.oschrenk.humangeo.api.PointPointDistance;
+import com.oschrenk.humangeo.api.Distance;
 import com.oschrenk.humangeo.core.Geographic2dCoordinate;
 import com.oschrenk.humangeo.geom.Sphere;
 
@@ -22,7 +22,7 @@ import com.oschrenk.humangeo.geom.Sphere;
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class HaversineDistance implements
-		PointPointDistance<Geographic2dCoordinate> {
+		Distance<Geographic2dCoordinate, Geographic2dCoordinate> {
 
 	/** The sphere. */
 	private final Sphere sphere;
@@ -70,8 +70,7 @@ public class HaversineDistance implements
 	}
 
 	/*
-	 * @see
-	 * com.oschrenk.humangeo.api.PointPointDistance#distance(java.lang.Object,
+	 * @see com.oschrenk.humangeo.api.Distance#distance(java.lang.Object,
 	 * java.lang.Object)
 	 */
 	@Override

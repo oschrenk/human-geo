@@ -3,10 +3,11 @@ package com.oschrenk.humangeo.api;
 /**
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
+ * @param <F>
  * @param <T>
  */
-public interface PointLineDestination<T> {
+public interface Distance<F, T> {
 
-	T destination(final T point, final T from, final T to);
+	double distance(final F from, final T to);
 
 }

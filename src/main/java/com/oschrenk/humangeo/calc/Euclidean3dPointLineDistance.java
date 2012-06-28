@@ -1,7 +1,8 @@
 package com.oschrenk.humangeo.calc;
 
-import com.oschrenk.humangeo.api.PointLineDistance;
+import com.oschrenk.humangeo.api.Distance;
 import com.oschrenk.humangeo.core.Cartesian3dCoordinate;
+import com.oschrenk.humangeo.core.Segment;
 import com.oschrenk.humangeo.cs.Vectors;
 
 /**
@@ -11,16 +12,13 @@ import com.oschrenk.humangeo.cs.Vectors;
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class Euclidean3dPointLineDistance implements
-		PointLineDistance<Cartesian3dCoordinate> {
+		Distance<Cartesian3dCoordinate, Segment<Cartesian3dCoordinate>> {
 
-	/*
-	 * @see
-	 * com.oschrenk.humangeo.api.PointLineDistance#distance(java.lang.Object,
-	 * java.lang.Object, java.lang.Object)
-	 */
 	@Override
 	public double distance(final Cartesian3dCoordinate point,
-			final Cartesian3dCoordinate from, final Cartesian3dCoordinate to) {
+			final Segment<Cartesian3dCoordinate> segment) {
+		final Cartesian3dCoordinate from = segment.getFrom();
+		final Cartesian3dCoordinate to = segment.getTo();
 
 		// distance = |PA cross AB_0/ |
 		final Cartesian3dCoordinate pa = Vectors.minus(point, from);

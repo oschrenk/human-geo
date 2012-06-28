@@ -1,7 +1,8 @@
 package com.oschrenk.humangeo.calc;
 
-import com.oschrenk.humangeo.api.PointLineDestination;
+import com.oschrenk.humangeo.api.PointSegmentDestination;
 import com.oschrenk.humangeo.core.Geographic2dCoordinate;
+import com.oschrenk.humangeo.core.Segment;
 import com.oschrenk.humangeo.geom.Sphere;
 
 /**
@@ -11,7 +12,7 @@ import com.oschrenk.humangeo.geom.Sphere;
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class AlongTrackOrthodromeDestination implements
-		PointLineDestination<Geographic2dCoordinate> {
+		PointSegmentDestination<Geographic2dCoordinate> {
 
 	/** The sphere. */
 	private final Sphere sphere;
@@ -35,13 +36,15 @@ public class AlongTrackOrthodromeDestination implements
 	@Override
 	public Geographic2dCoordinate destination(
 			final Geographic2dCoordinate point,
-			final Geographic2dCoordinate from, final Geographic2dCoordinate to) {
+			final Segment<Geographic2dCoordinate> segment) {
 
-		final double initialBearing = new OrthodromeBearing().bearing(from, to);
+		final double initialBearing = new OrthodromeBearing().bearing(
+				segment.getFrom(), segment.getTo());
 		final double distance = new AlongTrackOrthodromeDistance(sphere)
-				.distance(point, from, to);
+				.distance(point, segment);
 		final Geographic2dCoordinate destination = new OrthodromeDestination(
-				sphere).destination(from, initialBearing, distance);
+				sphere)
+				.destination(segment.getFrom(), initialBearing, distance);
 
 		return destination;
 	}
