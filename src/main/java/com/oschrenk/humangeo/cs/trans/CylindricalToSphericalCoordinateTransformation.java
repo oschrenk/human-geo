@@ -8,7 +8,7 @@ import com.oschrenk.humangeo.cs.SphericalCoordinate;
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
-public class CylindricaltoSphericalCoordinateTransformation implements
+public class CylindricalToSphericalCoordinateTransformation implements
 		CoordinateTransformation<CylindricalCoordinate, SphericalCoordinate> {
 
 	/*
