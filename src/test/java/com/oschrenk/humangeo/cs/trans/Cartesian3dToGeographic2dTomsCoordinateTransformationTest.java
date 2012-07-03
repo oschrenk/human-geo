@@ -13,7 +13,7 @@ import com.oschrenk.humangeo.ref.Ellipsoids;
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
-public class Cartesian2dToGeographic2dTomsCoordinateTransformationTest {
+public class Cartesian3dToGeographic2dTomsCoordinateTransformationTest {
 
 	// tested with results from
 	// http://www.apsalin.com/convert-cartesian-to-geodetic.aspx
