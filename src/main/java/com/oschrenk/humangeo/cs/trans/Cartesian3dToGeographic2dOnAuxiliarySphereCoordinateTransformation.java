@@ -9,13 +9,13 @@ import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
-public class Cartesian3dToGeographic2dWithAuxiliarySphereCoordinateTransformation
+public class Cartesian3dToGeographic2dOnAuxiliarySphereCoordinateTransformation
 		implements
 		CoordinateTransformation<Cartesian3dCoordinate, Geographic2dCoordinate> {
 
 	private final Sphere sphere;
 
-	public Cartesian3dToGeographic2dWithAuxiliarySphereCoordinateTransformation(
+	public Cartesian3dToGeographic2dOnAuxiliarySphereCoordinateTransformation(
 			final Sphere sphere) {
 		super();
 		this.sphere = sphere;
