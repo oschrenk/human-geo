@@ -36,6 +36,6 @@ public class CrossTrackOrthodromeDistanceTest {
 		final double circumferenceEarth = 2 * Math.PI
 				* Spheres.EARTH.getRadius();
 
-		assertEquals(circumferenceEarth / 8, distance, 0d);
+		assertEquals(circumferenceEarth / 8, distance, 0.000000001d);
 	}
 }

@@ -49,7 +49,7 @@ public class CrossTrackOrthodromeDistance implements
 		// @formatter:off
 		final double dt = //
 		Math.asin( //
-		Math.sin(Math.toRadians(d13 / r)) //
+		Math.sin(d13 / r) //
 				* Math.sin(Math.toRadians(b13 - b12)) //
 		) * r; //
 		// @formatter:on
