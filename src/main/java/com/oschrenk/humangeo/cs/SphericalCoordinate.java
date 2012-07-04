@@ -1,6 +1,5 @@
 package com.oschrenk.humangeo.cs;
 
-
 /**
  * A spherical coordinate
  * 
@@ -44,6 +43,30 @@ public class SphericalCoordinate extends PolarCoordinate {
 	 */
 	public double getPhi() {
 		return phi;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		long temp;
+		temp = Double.doubleToLongBits(phi);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SphericalCoordinate other = (SphericalCoordinate) obj;
+		if (Double.doubleToLongBits(phi) != Double.doubleToLongBits(other.phi))
+			return false;
+		return true;
 	}
 
 	/*

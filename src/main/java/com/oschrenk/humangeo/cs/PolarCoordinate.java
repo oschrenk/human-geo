@@ -1,6 +1,5 @@
 package com.oschrenk.humangeo.cs;
 
-
 /**
  * A polar coordinate is a coordinate in the {@link PolarCoordinateSystem}
  * 
@@ -51,6 +50,35 @@ public class PolarCoordinate {
 	 */
 	public double getR() {
 		return r;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(r);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(theta);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PolarCoordinate other = (PolarCoordinate) obj;
+		if (Double.doubleToLongBits(r) != Double.doubleToLongBits(other.r))
+			return false;
+		if (Double.doubleToLongBits(theta) != Double
+				.doubleToLongBits(other.theta))
+			return false;
+		return true;
 	}
 
 	/*

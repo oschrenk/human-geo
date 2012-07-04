@@ -42,6 +42,31 @@ public class Geographic3dCoordinate extends Geographic2dCoordinate {
 		return height;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		long temp;
+		temp = Double.doubleToLongBits(height);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Geographic3dCoordinate other = (Geographic3dCoordinate) obj;
+		if (Double.doubleToLongBits(height) != Double
+				.doubleToLongBits(other.height))
+			return false;
+		return true;
+	}
+
 	/*
 	 * @see java.lang.Object#toString()
 	 */
