@@ -48,9 +48,9 @@ public class AlongTrackOrthodromeDistance implements
 		// @formatter:off
 		final double dAt = //
 		Math.acos( //
-		Math.cos(Math.toRadians(d13 / r)) //
+		Math.cos(d13 / r) //
 				/ //
-				Math.cos(Math.toRadians(dXt) / r) //
+				Math.cos(dXt / r) //
 		) //
 				* r;
 		// @formatter:on
