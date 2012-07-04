@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import com.oschrenk.humangeo.core.Segment;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
+import com.oschrenk.humangeo.cs.GeographicCoordinateSystem;
+import com.oschrenk.humangeo.ref.Ellipsoids;
 import com.oschrenk.humangeo.ref.Spheres;
 
 /**
@@ -25,5 +27,19 @@ public class AlongTrackOrthodromeDestinationTest {
 
 		assertEquals(new Geographic2dCoordinate(0, 0), destination);
 	}
-	
+
+	@Test
+	public void test() {
+		// FIXME validate result; implmentation says (54.73561031724535, 0.0), I say
+		// (45, 45)
+		final Geographic2dCoordinate from = new Geographic2dCoordinate(0, 0);
+		final Geographic2dCoordinate to = new Geographic2dCoordinate(90, 0);
+		final Geographic2dCoordinate point = new Geographic2dCoordinate(45, 45);
+		final Geographic2dCoordinate destination = new AlongTrackOrthodromeDestination(
+				Spheres.EARTH).destination(point,
+				new Segment<Geographic2dCoordinate>(from, to));
+
+		assertEquals(new Geographic2dCoordinate(45, 45), destination);
+	}
+
 }
