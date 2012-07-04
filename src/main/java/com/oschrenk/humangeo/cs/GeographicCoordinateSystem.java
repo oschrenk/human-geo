@@ -33,20 +33,20 @@ public class GeographicCoordinateSystem {
 	private final Spheroid spheroid;
 
 	/** The helper sphere. */
-	private final Sphere helperSphere;
+	private final Sphere auxiliarySphere;
 
 	/**
 	 * Instantiates a new geographic coordinate system.
 	 * 
 	 * @param spheroid
 	 *            the spheroid
-	 * @param helperSphere
+	 * @param auxiliarySphere
 	 *            For approximate calculations
 	 */
 	public GeographicCoordinateSystem(final Spheroid spheroid,
-			final Sphere helperSphere) {
+			final Sphere auxiliarySphere) {
 		this.spheroid = spheroid;
-		this.helperSphere = helperSphere;
+		this.auxiliarySphere = auxiliarySphere;
 	}
 
 	/**
@@ -70,10 +70,10 @@ public class GeographicCoordinateSystem {
 	/**
 	 * Gets the helper sphere.
 	 * 
-	 * @return the helperSphere
+	 * @return the auxiliary sphere
 	 */
-	public Sphere getHelperSphere() {
-		return helperSphere;
+	public Sphere getAuxiliarySphere() {
+		return auxiliarySphere;
 	}
 
 	/**
