@@ -22,3 +22,11 @@ It offers:
 	- reference spheres and ellipsoids
 
 The library is in its early stages. If you find errors or think the API should be changed please open an issue or even better fork the project and create a pull request.
+
+## Installation ##
+
+For a local installation of the artifact
+
+	git clone https://github.com/oschrenk/human-geo
+	cd human-geo
+	mvn install
