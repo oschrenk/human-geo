@@ -13,7 +13,7 @@ import com.oschrenk.humangeo.ref.Spheres;
  * 
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
-public class AlongCrossTrackOrthodromeDistanceTest {
+public class AlongTrackOrthodromeDistanceTest {
 
 	private static final double CIRCUMFERENCE_EARTH = 2 * Math.PI
 			* Spheres.EARTH.getRadius();
