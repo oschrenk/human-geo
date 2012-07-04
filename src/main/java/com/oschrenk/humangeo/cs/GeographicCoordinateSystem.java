@@ -105,9 +105,20 @@ public class GeographicCoordinateSystem {
 	 * @see Arrays#map(double[], com.oschrenk.humangeo.io.Mask,
 	 *      com.oschrenk.humangeo.io.Mask)
 	 */
-	public static Geographic3dCoordinate fromArray(
+	public static final Geographic3dCoordinate fromArray(
 			final double[] geographic3dCoordinate) {
 		return new Geographic3dCoordinate(geographic3dCoordinate[0],
 				geographic3dCoordinate[1], geographic3dCoordinate[2]);
+	}
+
+	/**
+	 * Radius of a given latitude on auxiliary sphere (in degrees).
+	 * 
+	 * @param latitude
+	 *            the latitude in degrees
+	 * @return the radius of the auxiliary sphere
+	 */
+	public final double getRadiusOfLatitudeOnAuxiliarySphere(double latitude) {
+		return auxiliarySphere.getRadius() * Math.cos(Math.toRadians(latitude));
 	}
 }
