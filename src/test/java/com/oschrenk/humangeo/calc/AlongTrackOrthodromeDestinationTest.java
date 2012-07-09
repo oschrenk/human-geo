@@ -2,7 +2,6 @@ package com.oschrenk.humangeo.calc;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.oschrenk.humangeo.core.Segment;
@@ -14,6 +13,8 @@ import com.oschrenk.humangeo.ref.Spheres;
  * @author Oliver Schrenk <oliver.schrenk@gmail.com>
  */
 public class AlongTrackOrthodromeDestinationTest {
+
+	private static final double ONE_SECOND = 0.000277777778;
 
 	@Test
 	public void testOnEquator() {
@@ -27,10 +28,7 @@ public class AlongTrackOrthodromeDestinationTest {
 		assertEquals(new Geographic2dCoordinate(0, 0), destination);
 	}
 
-	@Ignore("Cross check needed for validation")
 	@Test
-	// FIXME validate result; implementation says (54.73561031724535, 0.0),
-	// I say (45, 45)
 	public void test() {
 		final Geographic2dCoordinate from = new Geographic2dCoordinate(0, 0);
 		final Geographic2dCoordinate to = new Geographic2dCoordinate(90, 0);
@@ -39,7 +37,9 @@ public class AlongTrackOrthodromeDestinationTest {
 				Spheres.EARTH).destination(point,
 				new Segment<Geographic2dCoordinate>(from, to));
 
-		assertEquals(new Geographic2dCoordinate(45, 45), destination);
-	}
+		assertEquals(54 + 44d / 60 + 8d / 3600, destination.getLatitude(),
+				ONE_SECOND);
+		assertEquals(0, destination.getLongitude(), ONE_SECOND);
 
+	}
 }
