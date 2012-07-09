@@ -14,7 +14,20 @@ import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
 public class Euclidean3dPointLineDistanceTest {
 
 	@Test
-	public void testDistance() {
+	public void testDistance2d() {
+		final Cartesian3dCoordinate from = new Cartesian3dCoordinate(1, 1, 0);
+		final Cartesian3dCoordinate to = new Cartesian3dCoordinate(5, 5, 0);
+
+		final Cartesian3dCoordinate point = new Cartesian3dCoordinate(1, 5, 0);
+
+		final double distance = new Euclidean3dPointLineDistance().distance(
+				point, new Segment<Cartesian3dCoordinate>(from, to));
+
+		assertEquals(2 * Math.sqrt(2), distance, 0.00000001d);
+	}
+
+	@Test
+	public void testDistance3d() {
 		final Cartesian3dCoordinate from = new Cartesian3dCoordinate(1, 2, 3);
 		final Cartesian3dCoordinate to = new Cartesian3dCoordinate(5, 7, 9);
 

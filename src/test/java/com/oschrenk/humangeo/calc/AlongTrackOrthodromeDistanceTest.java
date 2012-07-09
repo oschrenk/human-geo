@@ -59,4 +59,23 @@ public class AlongTrackOrthodromeDistanceTest {
 		assertEquals(circumferenceEarth / 8, distance, 0.000000001d);
 	}
 
+	@Test
+	// cross check with http://williams.best.vwh.net/avform.htm#Example
+	public void testDtoLAXtoJFK() {
+		// LAX: (33deg 57min N, 118deg 24min W)
+		Geographic2dCoordinate LAX = new Geographic2dCoordinate(33 + 57d / 60,
+				118 + 24d / 60);
+		// JFK: (40deg 38min N, 73deg 47min W)
+		Geographic2dCoordinate JFK = new Geographic2dCoordinate(40 + 38d / 60,
+				73 + 47d / 60);
+		// (D): N34:30 W116:30
+		Geographic2dCoordinate D = new Geographic2dCoordinate(34 + 30d / 60,
+				116 + 30d / 60);
+
+		final double distance = new AlongTrackOrthodromeDistance(Spheres.EARTH)
+				.distance(D, new Segment<Geographic2dCoordinate>(LAX, JFK));
+
+		assertEquals(184562.2, distance, 0.1d);
+	}
+
 }

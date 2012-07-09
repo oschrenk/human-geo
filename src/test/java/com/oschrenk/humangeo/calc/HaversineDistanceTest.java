@@ -22,4 +22,9 @@ public class HaversineDistanceTest {
 
 	}
 
+	@Test 
+	public void testLAXtoD() {
+		
+	}
+	
 }

@@ -1,14 +1,11 @@
 package com.oschrenk.humangeo.calc;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.oschrenk.humangeo.core.Segment;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.cs.GeographicCoordinateSystem;
-import com.oschrenk.humangeo.ref.Ellipsoids;
 import com.oschrenk.humangeo.ref.Spheres;
 
 /**
@@ -42,10 +39,8 @@ public class CrossTrackOrthodromeDistanceTest {
 		assertEquals(circumferenceEarth / 8, distance, 0.000000001d);
 	}
 
-	@Ignore("Cross check needed for validation")
 	@Test
-	// FIXME validate result; implmentation says 3335847.799336763, I say
-	// 3538200.8998758686
+	// cross check with R.geosphere package
 	public void testPointOn45() {
 		final Geographic2dCoordinate from = new Geographic2dCoordinate(0, 0);
 		final Geographic2dCoordinate to = new Geographic2dCoordinate(90, 0);
@@ -53,14 +48,25 @@ public class CrossTrackOrthodromeDistanceTest {
 		final double distance = new CrossTrackOrthodromeDistance(Spheres.EARTH)
 				.distance(point, new Segment<Geographic2dCoordinate>(from, to));
 
-		GeographicCoordinateSystem geographicCoordinateSystem = new GeographicCoordinateSystem(
-				Ellipsoids.WGS_84, Spheres.EARTH);
-		double radiusOfLatitudeOnAuxiliarySphere = geographicCoordinateSystem
-				.getRadiusOfLatitudeOnAuxiliarySphere(45);
+		assertEquals(3335847.799, distance, 0.001d);
+	}
 
-		final double circumference = 2 * Math.PI
-				* radiusOfLatitudeOnAuxiliarySphere;
+	@Test
+	// cross check with http://williams.best.vwh.net/avform.htm#Example
+	public void testDtoLAXtoJFK() {
+		// LAX: (33deg 57min N, 118deg 24min W)
+		Geographic2dCoordinate LAX = new Geographic2dCoordinate(33 + 57d / 60,
+				118 + 24d / 60);
+		// JFK: (40deg 38min N, 73deg 47min W)
+		Geographic2dCoordinate JFK = new Geographic2dCoordinate(40 + 38d / 60,
+				73 + 47d / 60);
+		// (D): N34:30 W116:30
+		Geographic2dCoordinate D = new Geographic2dCoordinate(34 + 30d / 60,
+				116 + 30d / 60);
 
-		assertEquals(circumference / 8, distance, 0.000000001d);
+		final double distance = new CrossTrackOrthodromeDistance(Spheres.EARTH)
+				.distance(D, new Segment<Geographic2dCoordinate>(LAX, JFK));
+
+		assertEquals(-13810.91, distance, 0.01d);
 	}
 }
