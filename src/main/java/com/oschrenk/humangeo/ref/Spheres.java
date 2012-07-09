@@ -39,6 +39,9 @@ public class Spheres {
 	/** The Constant PLUTO_VOLUMETRIC_MEAN_RADIUS. */
 	private static final int PLUTO_VOLUMETRIC_MEAN_RADIUS = 1195000;
 
+	/** The Constant NORMAL. */
+	public static final Sphere NORMAL = new Sphere(1);
+
 	/**
 	 * The earth isn't spherical in nature. This class assumes a mean radius of
 	 * 6371000 m. In reality the distances from the surface range from 6,353 km
