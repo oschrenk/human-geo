@@ -13,8 +13,8 @@ import java.util.regex.MatchResult;
  * characters are the correct unicode representation.
  * 
  * But as these symbols are often hard to input and seldom to be found in the
- * real world,is the parser is very lenient and accepts many variants as the
- * seperator symbols.
+ * real world, the parser is very lenient and accepts many variants as the
+ * separator symbols.
  * 
  * The parser also accepts fixed width degree measurements.
  * 
