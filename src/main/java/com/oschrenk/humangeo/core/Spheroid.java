@@ -89,11 +89,14 @@ public class Spheroid {
 		if (getClass() != obj.getClass())
 			return false;
 		Spheroid other = (Spheroid) obj;
-		if (Double.doubleToLongBits(semiMinorAxis) != Double.doubleToLongBits(other.semiMinorAxis))
+		if (Double.doubleToLongBits(semiMinorAxis) != Double
+				.doubleToLongBits(other.semiMinorAxis))
 			return false;
-		if (Double.doubleToLongBits(flattening) != Double.doubleToLongBits(other.flattening))
+		if (Double.doubleToLongBits(flattening) != Double
+				.doubleToLongBits(other.flattening))
 			return false;
-		if (Double.doubleToLongBits(semiMajorAxis) != Double.doubleToLongBits(other.semiMajorAxis))
+		if (Double.doubleToLongBits(semiMajorAxis) != Double
+				.doubleToLongBits(other.semiMajorAxis))
 			return false;
 		return true;
 	}
@@ -105,8 +108,122 @@ public class Spheroid {
 	 */
 	@Override
 	public String toString() {
-		return "Spheroid [semiMajorAxis=" + semiMajorAxis + ", semiMinorAxis=" + semiMinorAxis + ", flattening=" + flattening
-				+ "]";
+		return "Spheroid [semiMajorAxis=" + semiMajorAxis + ", semiMinorAxis="
+				+ semiMinorAxis + ", flattening=" + flattening + "]";
 	}
 
+	public static Builder withSemiMajorAxisOf(double semiMajorAxis) {
+		return new Builder().withSemiMajorAxisOf(semiMajorAxis);
+	}
+
+	public static Builder withSemiMinorAxisOf(double semiMinorAxis) {
+		return new Builder().withSemiMinorAxisOf(semiMinorAxis);
+	}
+
+	public static Builder withFlattening(double flattening) {
+		return new Builder().withFlatteningOf(flattening);
+	}
+
+	/**
+	 * The {@link SpheroidBuilder} helps build valid {@link Spheroid}s by
+	 * specifying the parameters.
+	 * 
+	 * When building with a given flattening, the last set axis will be used for
+	 * construction, overriding the other axis if given prior (which shouldn't
+	 * be done in any case).
+	 * 
+	 * @author Oliver Schrenk <oliver.schrenk@gmail.com>
+	 */
+	static class Builder {
+
+		/** The Constant NONE. */
+		private static final byte NONE = 0;
+
+		/** The Constant MAJOR. */
+		private static final byte MAJOR = 1;
+
+		/** The Constant MINOR. */
+		private static final byte MINOR = -1;
+
+		/** The semi major axis. */
+		private double semiMajorAxis = Double.NaN;
+
+		/** The semi minor axis. */
+		private double semiMinorAxis = Double.NaN;
+
+		/** The flattening. */
+		private double flattening = Double.NaN;
+
+		/** The last set axis. */
+		private byte lastSetAxis = NONE;
+
+		/**
+		 * Specifies semi major axis.
+		 * 
+		 * @param semiMajorAxis
+		 *            the semi major axis
+		 * @return this spheroid builder
+		 */
+		public Builder withSemiMajorAxisOf(final double semiMajorAxis) {
+			this.semiMajorAxis = semiMajorAxis;
+			lastSetAxis = MAJOR;
+			return this;
+		}
+
+		/**
+		 * Specifies semi minor axis.
+		 * 
+		 * @param semiMinorAxis
+		 *            the semi minor axis
+		 * @return this spheroid builder
+		 */
+		public Builder withSemiMinorAxisOf(final double semiMinorAxis) {
+			this.semiMinorAxis = semiMinorAxis;
+			lastSetAxis = MINOR;
+			return this;
+		}
+
+		/**
+		 * Specifies flattening.
+		 * 
+		 * @param flattening
+		 *            the flattening
+		 * @return this spheroid builder
+		 */
+		public Builder withFlatteningOf(final double flattening) {
+			this.flattening = flattening;
+			return this;
+		}
+
+		/**
+		 * Builds the spheroid.
+		 * 
+		 * @return the spheroid
+		 * @throws IllegalStateException
+		 *             if trying to build without flattening and one or more
+		 *             missing axis, or when trying to build with flattening and
+		 *             no set axis.
+		 */
+		public Spheroid build() {
+			if (Double.isNaN(flattening)) {
+				if (Double.isNaN(semiMajorAxis)) {
+					throw new IllegalStateException(
+							"Semi major radius not set.");
+				}
+				if (Double.isNaN(semiMinorAxis)) {
+					throw new IllegalStateException(
+							"Semi minor radius not set.");
+				}
+				flattening = (semiMajorAxis - semiMinorAxis) / semiMajorAxis;
+			} else if (lastSetAxis == NONE) {
+				throw new IllegalStateException("No set radius.");
+			} else if (lastSetAxis == MAJOR) {
+				semiMinorAxis = semiMajorAxis * (1 - flattening);
+			} else if (lastSetAxis == MINOR) {
+				semiMajorAxis = semiMinorAxis / (1 - flattening);
+			}
+			return new Spheroid(semiMajorAxis, semiMinorAxis, flattening);
+		}
+
+	}
 }

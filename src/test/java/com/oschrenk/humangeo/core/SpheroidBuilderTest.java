@@ -1,23 +1,20 @@
 package com.oschrenk.humangeo.core;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import com.oschrenk.humangeo.core.Spheroid;
-import com.oschrenk.humangeo.core.SpheroidBuilder;
 
 public class SpheroidBuilderTest {
 
 	private static final double WGS84_FLATTENING = 0.0033528106718309896;
 	private static final double WGS84_MINOR = 6356752.3142;
 	private static final double WGS84_MAJOR = 6378137.0;
-	private SpheroidBuilder spheroidBuilder;
+	private Spheroid.Builder spheroidBuilder;
 
 	@Before
 	public void setUp() throws Exception {
-		spheroidBuilder = new SpheroidBuilder();
+		spheroidBuilder = new Spheroid.Builder();
 	}
 
 	@Test
