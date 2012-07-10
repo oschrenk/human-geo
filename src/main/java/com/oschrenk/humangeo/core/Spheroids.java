@@ -196,4 +196,63 @@ public class Spheroids {
 		return nom / denom;
 	}
 
+	/**
+	 * Earth's authalic ("equal area") radius is the radius of a hypothetical
+	 * perfect sphere which has the same surface area as the reference
+	 * ellipsoid.
+	 * 
+	 * @param spheroid
+	 *            reference spheroid
+	 * @return the authalic radius squared
+	 */
+	public static final double authalicRadius(final Spheroid spheroid) {
+		return Math.sqrt(authalicRadiusSquared(spheroid));
+	}
+
+	/**
+	 * Earth's authalic ("equal area") radius is the radius of a hypothetical
+	 * perfect sphere which has the same surface area as the reference
+	 * ellipsoid.
+	 * 
+	 * @param spheroid
+	 *            reference spheroid
+	 * @return the authalic radius squared
+	 */
+	public static final double authalicRadiusSquared(final Spheroid spheroid) {
+		final double a = spheroid.getSemiMajorAxis();
+		final double b = spheroid.getSemiMinorAxis();
+		final double e2 = eccentricitySquared(spheroid);
+		return (a * a + b
+				* b
+				* (e2 == 0 ? 1 : (e2 > 0 ? atanh(Math.sqrt(e2)) : Math
+						.atan(Math.sqrt(-e2))) / Math.sqrt(Math.abs(e2)))) / 2;
+	}
+
+	/**
+	 * Inverse hyperbolic tangent
+	 * 
+	 * @param x
+	 * @return
+	 */
+	private static final double atanh(double x) {
+		double y = Math.abs(x); // Enforce odd parity
+		y = log1p(2 * y / (1 - y)) / 2;
+		return x < 0 ? -y : y;
+	}
+
+	/**
+	 * Compute log(1+x) accurately for small values of x
+	 * 
+	 * @param x
+	 * @return
+	 */
+	private static double log1p(final double x) {
+		final double y = 1 + x;
+		final double z = y - 1;
+		// Here's the explanation for this magic: y = 1 + z, exactly, and z
+		// approx x, thus log(y)/z (which is nearly constant near z = 0) returns
+		// a good approximation to the true log(1 + x)/x. The multiplication x *
+		// (log(y)/z) introduces little additional error.
+		return z == 0 ? x : x * Math.log(y) / z;
+	}
 }
