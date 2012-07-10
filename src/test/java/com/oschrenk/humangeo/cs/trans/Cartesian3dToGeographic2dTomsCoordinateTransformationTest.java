@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
+import com.oschrenk.humangeo.core.Spheroids;
 import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.ref.Ellipsoids;
 
 /**
  * 
@@ -28,7 +28,7 @@ public class Cartesian3dToGeographic2dTomsCoordinateTransformationTest {
 				y, z);
 
 		final CoordinateTransformation<Cartesian3dCoordinate, Geographic2dCoordinate> transformation = new Cartesian3dToGeographic2dTomsCoordinateTransformation(
-				Ellipsoids.WGS_84);
+				Spheroids.WGS_84);
 
 		final Geographic2dCoordinate paris = transformation
 				.transform(coordinate);

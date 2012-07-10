@@ -1,6 +1,5 @@
-package com.oschrenk.humangeo.ref;
+package com.oschrenk.humangeo.core;
 
-import com.oschrenk.humangeo.core.Sphere;
 
 /**
  * Holds default spheres.

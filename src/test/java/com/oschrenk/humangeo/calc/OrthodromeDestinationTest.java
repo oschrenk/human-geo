@@ -6,8 +6,8 @@ import org.junit.Test;
 
 import com.oschrenk.humangeo.api.Destination;
 import com.oschrenk.humangeo.calc.OrthodromeDestination;
+import com.oschrenk.humangeo.core.Spheres;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.ref.Spheres;
 
 public class OrthodromeDestinationTest {
 

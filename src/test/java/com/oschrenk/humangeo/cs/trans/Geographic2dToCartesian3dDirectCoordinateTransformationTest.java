@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.oschrenk.humangeo.api.CoordinateTransformation;
+import com.oschrenk.humangeo.core.Spheroids;
 import com.oschrenk.humangeo.cs.Cartesian3dCoordinate;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.ref.Ellipsoids;
 
 /**
  * 
@@ -18,7 +18,7 @@ public class Geographic2dToCartesian3dDirectCoordinateTransformationTest {
 	@Test
 	public void test() {
 		final CoordinateTransformation<Geographic2dCoordinate, Cartesian3dCoordinate> transformationForward = new Geographic2dToCartesian3dDirectCoordinateTransformation(
-				Ellipsoids.WGS_84);
+				Spheroids.WGS_84);
 
 		// Paris
 		final double latitude = 48 + 50 / 60.0;

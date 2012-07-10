@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.oschrenk.humangeo.calc.InverseVincentyDistance;
+import com.oschrenk.humangeo.core.Spheroids;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.ref.Ellipsoids;
 
 public class InverseVincentyDistanceTest {
 
@@ -18,7 +18,7 @@ public class InverseVincentyDistanceTest {
 				52.20527777777778, -0.1425);
 
 		assertEquals(155927.727,
-				new InverseVincentyDistance(Ellipsoids.WGS_84)
+				new InverseVincentyDistance(Spheroids.WGS_84)
 						.distance(from, to), 0.1);
 
 	}

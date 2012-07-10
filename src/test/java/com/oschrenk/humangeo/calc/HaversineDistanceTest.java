@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.oschrenk.humangeo.calc.HaversineDistance;
+import com.oschrenk.humangeo.core.Spheres;
 import com.oschrenk.humangeo.cs.Geographic2dCoordinate;
-import com.oschrenk.humangeo.ref.Spheres;
 
 public class HaversineDistanceTest {
 
