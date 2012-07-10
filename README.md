@@ -1,6 +1,6 @@
 # README #
 
-**human-geo** is a Java 1.6 project that tries to simplify the development of Geographic Information Systems, offering only the core concepts in an easy to understand API and trying to use class and method names that follow the naming principles of college level geometry and geodesy instead of introducing many abstraction layers.
+**human-geo** is a Java 1.6 project that simplifies the development of Geographic Information Systems, offering only the core concepts in an easy to understand API and trying to use class and method names that follow the naming principles of college level geometry and geodesy instead of introducing many abstraction layers.
 
 It offers:
 
