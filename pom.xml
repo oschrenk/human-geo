@@ -5,7 +5,7 @@
 
 	<groupId>com.oschrenk</groupId>
 	<artifactId>human-geo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 
 	<name>human-geo</name>
 	<inceptionYear>2012</inceptionYear>
